@@ -1,0 +1,89 @@
+﻿@using WorldlineLiveServiceReference
+@model List<BankDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bank Info</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="LoadDetails">
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label class="control-label">Select Bank</label>
+                    <select name="bankName" class="form-control" asp-items="ViewBag.BanksSelectList">
+                        <option value="">--- Select Bank ---</option>
+                    </select>
+                </div>
+                <div class="mt-auto">
+                    <label class="control-label">&nbsp;</label>
+                    <label class="control-label">OR</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label">Enter IFSC</label>
+                    <input type="text" name="ifsc" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Load Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model != null)
+{
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Bank</th>
+                <th>Ifsc</th>
+                <th>MicrCode</th>
+                <th>Branch</th>
+                <th>StdCode</th>
+                <th>Contact</th>
+                <th>City</th>
+                <th>District</th>
+                <th>State</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Bank
+                    </td>
+                    <td>
+                        @item.Ifsc
+                    </td>
+                    <td>
+                        @item.MicrCode
+                    </td>
+                    <td>
+                        @item.Branch
+                    </td>
+                    <td>
+                        @item.StdCode
+                    </td>
+                    <td>
+                        @item.Contact
+                    </td>
+                    <td>
+                        @item.City
+                    </td>
+                    <td>
+                        @item.District
+                    </td>
+                    <td>
+                        @item.State
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table> 
+}
