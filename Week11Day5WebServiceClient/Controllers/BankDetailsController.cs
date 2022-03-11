@@ -35,10 +35,7 @@ namespace Week11Day5WebServiceClient.Controllers
 
             if (!string.IsNullOrEmpty(bankName))
             {
-                bankDetails = await _bankDetailService.GetBranchDetailsByBankAsync(bankName);
-
-                ViewData["offset"] = 0;
-                ViewData["rowCount"] = 10;
+                bankDetails = await _bankDetailService.GetBranchDetailsByBankAsync(bankName);                
             }
             else if (!string.IsNullOrEmpty(ifsc))
             {
