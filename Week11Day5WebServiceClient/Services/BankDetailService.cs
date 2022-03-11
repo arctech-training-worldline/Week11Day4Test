@@ -36,16 +36,11 @@ namespace Week11Day5WebServiceClient.Services
             };
         }
 
-        private async Task<SoapDemoSoapClient> GetInstanceAsync()
-        {
-            return await Task.Run(() => new SoapDemoSoapClient(basicHttpBinding, endpointAddress));
-        }
-
         public async Task<List<Bank>> GetBankListAsync()
         {
             try
             {
-                var client = await GetInstanceAsync();
+                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
                 var response = await client.GetBankListAsync();
 
                 var result = response.Body.GetBankListResult.ToList();
@@ -62,7 +57,7 @@ namespace Week11Day5WebServiceClient.Services
         {
             try
             {
-                var client = await GetInstanceAsync();
+                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
                 var response = await client.GetBranchDetailsByBankAsync(bankName, offset, rowCount);
 
                 var result = response.Body.GetBranchDetailsByBankResult.ToList();
@@ -79,7 +74,7 @@ namespace Week11Day5WebServiceClient.Services
         {
             try
             {
-                var client = await GetInstanceAsync();
+                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
                 var response = await client.GetBranchDetailsByIfscAsync(ifsc);
 
                 var result = response.Body.GetBranchDetailsByIfscResult;
