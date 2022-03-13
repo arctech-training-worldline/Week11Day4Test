@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Week11Day5WebServiceClient.Models;
-using WorldlineLiveServiceReference;
+using BankDataServiceReference;
 
 namespace Week11Day5WebServiceClient.Services
 {

@@ -1,26 +1,28 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
-using WorldlineLiveServiceReference;
+using BankDataServiceReference;
+using Microsoft.Extensions.Options;
+using Week11Day5WebServiceClient.Settings;
+
 
 namespace Week11Day5WebServiceClient.Services
 {
     public class BankDetailService : IBankDetailService
     {
-        public readonly string serviceUrl = "https://bankdetailsdemo.azurewebsites.net/WebServices/SoapDemo.asmx";
+        public readonly string serviceUrl = "https://localhost:44352/WebServicesDev/BankData.asmx";
         private readonly ILogger<BankDetailService> _logger;
-        private readonly IConfiguration _configuration;
         public readonly EndpointAddress endpointAddress;
         public readonly BasicHttpBinding basicHttpBinding;
+        private readonly BankDetailsApiAuth _bankDetailsApiAuth;
 
-        public BankDetailService(ILogger<BankDetailService> logger, IConfiguration configuration)
+        public BankDetailService(ILogger<BankDetailService> logger, IOptions<BankDetailsApiAuth> bankDetailsApiAuthAccessor)
         {
             _logger = logger;
-            _configuration = configuration;
+            _bankDetailsApiAuth = bankDetailsApiAuthAccessor.Value;
 
             endpointAddress = new EndpointAddress(serviceUrl);
 
@@ -40,10 +42,11 @@ namespace Week11Day5WebServiceClient.Services
         {
             try
             {
-                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
-                var response = await client.GetBankListAsync();
+                var client = new BankDataSoapClient(basicHttpBinding, endpointAddress);
 
+                var response = await client.GetBankListAsync(0, 25);
                 var result = response.Body.GetBankListResult.ToList();
+
                 return result;
             }
             catch (Exception ex)
@@ -57,10 +60,11 @@ namespace Week11Day5WebServiceClient.Services
         {
             try
             {
-                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
+                var client = new BankDataSoapClient(basicHttpBinding, endpointAddress);
+                
                 var response = await client.GetBranchDetailsByBankAsync(bankName, offset, rowCount);
-
                 var result = response.Body.GetBranchDetailsByBankResult.ToList();
+
                 return result;
             }
             catch (Exception ex)
@@ -74,10 +78,11 @@ namespace Week11Day5WebServiceClient.Services
         {
             try
             {
-                var client = new SoapDemoSoapClient(basicHttpBinding, endpointAddress);
-                var response = await client.GetBranchDetailsByIfscAsync(ifsc);
+                var client = new BankDataSoapClient(basicHttpBinding, endpointAddress);
 
+                var response = await client.GetBranchDetailsByIfscAsync(ifsc);
                 var result = response.Body.GetBranchDetailsByIfscResult;
+
                 return result;
             }
             catch (Exception ex)

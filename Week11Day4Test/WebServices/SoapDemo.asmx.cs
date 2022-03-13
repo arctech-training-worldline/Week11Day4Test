@@ -28,25 +28,25 @@ namespace Week11Day4Test.WebServices
             return studentService.GetAllStudents();
         }
 
-        [WebMethod]
-        public List<Bank> GetBankList()
-        {
-            var bankBranchDataService = new BankBranchDataService();
-            return bankBranchDataService.GetBankList();
-        }
+        //[WebMethod]
+        //public List<Bank> GetBankList()
+        //{
+        //    var bankBranchDataService = new BankBranchDataService();
+        //    return bankBranchDataService.GetBankList();
+        //}
 
-        [WebMethod]
-        public BankDetails GetBranchDetailsByIfsc(string IfscCode)
-        {
-            var bankBranchDataService = new BankBranchDataService();
-            return bankBranchDataService.GetBranchDetailsByIfsc(IfscCode);
-        }
+        //[WebMethod]
+        //public BankData GetBranchDetailsByIfsc(string ifscCode)
+        //{
+        //    var bankBranchDataService = new BankBranchDataService();
+        //    return bankBranchDataService.GetBranchDetailsByIfsc(ifscCode);
+        //}
 
-        [WebMethod]
-        public List<BankDetails> GetBranchDetailsByBank(string bankName, int offset, int rowCount)
-        {
-            var bankBranchDataService = new BankBranchDataService();
-            return bankBranchDataService.GetBranchDetailsByBank(bankName, offset, rowCount);
-        }
+        //[WebMethod]
+        //public List<BankData> GetBranchDetailsByBank(string bankName, int offset, int rowCount)
+        //{
+        //    var bankBranchDataService = new BankBranchDataService();
+        //    return bankBranchDataService.GetBranchDetailsByBank(bankName, offset, rowCount);
+        //}
     }
 }

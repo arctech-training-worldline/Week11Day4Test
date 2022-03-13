@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BankDataServiceReference;
 using Week11Day5WebServiceClient.Services;
-using WorldlineLiveServiceReference;
 
 namespace Week11Day5WebServiceClient.Controllers
 {
@@ -35,7 +34,7 @@ namespace Week11Day5WebServiceClient.Controllers
 
             if (!string.IsNullOrEmpty(bankName))
             {
-                bankDetails = await _bankDetailService.GetBranchDetailsByBankAsync(bankName);                
+                bankDetails = await _bankDetailService.GetBranchDetailsByBankAsync(bankName, 0, 25);
             }
             else if (!string.IsNullOrEmpty(ifsc))
             {

@@ -7,77 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorldlineLiveServiceReference
+namespace BankDataServiceReference
 {
     using System.Runtime.Serialization;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Student", Namespace="http://arctechinfo.com/webservies/worldline-training")]
-    public partial class Student : object
-    {
-        
-        private int RollNoField;
-        
-        private string NameField;
-        
-        private System.DateTime DateOfBirthField;
-        
-        private double PercentageField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int RollNo
-        {
-            get
-            {
-                return this.RollNoField;
-            }
-            set
-            {
-                this.RollNoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime DateOfBirth
-        {
-            get
-            {
-                return this.DateOfBirthField;
-            }
-            set
-            {
-                this.DateOfBirthField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public double Percentage
-        {
-            get
-            {
-                return this.PercentageField;
-            }
-            set
-            {
-                this.PercentageField = value;
-            }
-        }
-    }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
@@ -244,168 +177,18 @@ namespace WorldlineLiveServiceReference
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://arctechinfo.com/webservies/worldline-training", ConfigurationName="WorldlineLiveServiceReference.SoapDemoSoap")]
-    public interface SoapDemoSoap
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://arctechinfo.com/webservies/worldline-training", ConfigurationName="BankDataServiceReference.BankDataSoap")]
+    public interface BankDataSoap
     {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://arctechinfo.com/webservies/worldline-training/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.HelloWorldResponse> HelloWorldAsync(WorldlineLiveServiceReference.HelloWorldRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://arctechinfo.com/webservies/worldline-training/GetOrders", ReplyAction="*")]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetOrdersResponse> GetOrdersAsync(WorldlineLiveServiceReference.GetOrdersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://arctechinfo.com/webservies/worldline-training/GetBankList", ReplyAction="*")]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBankListResponse> GetBankListAsync(WorldlineLiveServiceReference.GetBankListRequest request);
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBankListResponse> GetBankListAsync(BankDataServiceReference.GetBankListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://arctechinfo.com/webservies/worldline-training/GetBranchDetailsByIfsc", ReplyAction="*")]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByIfscResponse> GetBranchDetailsByIfscAsync(WorldlineLiveServiceReference.GetBranchDetailsByIfscRequest request);
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByIfscResponse> GetBranchDetailsByIfscAsync(BankDataServiceReference.GetBranchDetailsByIfscRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://arctechinfo.com/webservies/worldline-training/GetBranchDetailsByBank", ReplyAction="*")]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByBankResponse> GetBranchDetailsByBankAsync(WorldlineLiveServiceReference.GetBranchDetailsByBankRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.HelloWorldRequestBody Body;
-        
-        public HelloWorldRequest()
-        {
-        }
-        
-        public HelloWorldRequest(WorldlineLiveServiceReference.HelloWorldRequestBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody
-    {
-        
-        public HelloWorldRequestBody()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse()
-        {
-        }
-        
-        public HelloWorldResponse(WorldlineLiveServiceReference.HelloWorldResponseBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://arctechinfo.com/webservies/worldline-training")]
-    public partial class HelloWorldResponseBody
-    {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody()
-        {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult)
-        {
-            this.HelloWorldResult = HelloWorldResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetOrdersRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOrders", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetOrdersRequestBody Body;
-        
-        public GetOrdersRequest()
-        {
-        }
-        
-        public GetOrdersRequest(WorldlineLiveServiceReference.GetOrdersRequestBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class GetOrdersRequestBody
-    {
-        
-        public GetOrdersRequestBody()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetOrdersResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOrdersResponse", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetOrdersResponseBody Body;
-        
-        public GetOrdersResponse()
-        {
-        }
-        
-        public GetOrdersResponse(WorldlineLiveServiceReference.GetOrdersResponseBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://arctechinfo.com/webservies/worldline-training")]
-    public partial class GetOrdersResponseBody
-    {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WorldlineLiveServiceReference.Student[] GetOrdersResult;
-        
-        public GetOrdersResponseBody()
-        {
-        }
-        
-        public GetOrdersResponseBody(WorldlineLiveServiceReference.Student[] GetOrdersResult)
-        {
-            this.GetOrdersResult = GetOrdersResult;
-        }
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByBankResponse> GetBranchDetailsByBankAsync(BankDataServiceReference.GetBranchDetailsByBankRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -416,13 +199,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBankList", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBankListRequestBody Body;
+        public BankDataServiceReference.GetBankListRequestBody Body;
         
         public GetBankListRequest()
         {
         }
         
-        public GetBankListRequest(WorldlineLiveServiceReference.GetBankListRequestBody Body)
+        public GetBankListRequest(BankDataServiceReference.GetBankListRequestBody Body)
         {
             this.Body = Body;
         }
@@ -431,12 +214,24 @@ namespace WorldlineLiveServiceReference
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://arctechinfo.com/webservies/worldline-training")]
     public partial class GetBankListRequestBody
     {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int offset;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int rowCount;
+        
         public GetBankListRequestBody()
         {
+        }
+        
+        public GetBankListRequestBody(int offset, int rowCount)
+        {
+            this.offset = offset;
+            this.rowCount = rowCount;
         }
     }
     
@@ -448,13 +243,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBankListResponse", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBankListResponseBody Body;
+        public BankDataServiceReference.GetBankListResponseBody Body;
         
         public GetBankListResponse()
         {
         }
         
-        public GetBankListResponse(WorldlineLiveServiceReference.GetBankListResponseBody Body)
+        public GetBankListResponse(BankDataServiceReference.GetBankListResponseBody Body)
         {
             this.Body = Body;
         }
@@ -468,13 +263,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WorldlineLiveServiceReference.Bank[] GetBankListResult;
+        public BankDataServiceReference.Bank[] GetBankListResult;
         
         public GetBankListResponseBody()
         {
         }
         
-        public GetBankListResponseBody(WorldlineLiveServiceReference.Bank[] GetBankListResult)
+        public GetBankListResponseBody(BankDataServiceReference.Bank[] GetBankListResult)
         {
             this.GetBankListResult = GetBankListResult;
         }
@@ -488,13 +283,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBranchDetailsByIfsc", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBranchDetailsByIfscRequestBody Body;
+        public BankDataServiceReference.GetBranchDetailsByIfscRequestBody Body;
         
         public GetBranchDetailsByIfscRequest()
         {
         }
         
-        public GetBranchDetailsByIfscRequest(WorldlineLiveServiceReference.GetBranchDetailsByIfscRequestBody Body)
+        public GetBranchDetailsByIfscRequest(BankDataServiceReference.GetBranchDetailsByIfscRequestBody Body)
         {
             this.Body = Body;
         }
@@ -508,15 +303,15 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string IfscCode;
+        public string ifscCode;
         
         public GetBranchDetailsByIfscRequestBody()
         {
         }
         
-        public GetBranchDetailsByIfscRequestBody(string IfscCode)
+        public GetBranchDetailsByIfscRequestBody(string ifscCode)
         {
-            this.IfscCode = IfscCode;
+            this.ifscCode = ifscCode;
         }
     }
     
@@ -528,13 +323,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBranchDetailsByIfscResponse", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBranchDetailsByIfscResponseBody Body;
+        public BankDataServiceReference.GetBranchDetailsByIfscResponseBody Body;
         
         public GetBranchDetailsByIfscResponse()
         {
         }
         
-        public GetBranchDetailsByIfscResponse(WorldlineLiveServiceReference.GetBranchDetailsByIfscResponseBody Body)
+        public GetBranchDetailsByIfscResponse(BankDataServiceReference.GetBranchDetailsByIfscResponseBody Body)
         {
             this.Body = Body;
         }
@@ -548,13 +343,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WorldlineLiveServiceReference.BankDetails GetBranchDetailsByIfscResult;
+        public BankDataServiceReference.BankDetails GetBranchDetailsByIfscResult;
         
         public GetBranchDetailsByIfscResponseBody()
         {
         }
         
-        public GetBranchDetailsByIfscResponseBody(WorldlineLiveServiceReference.BankDetails GetBranchDetailsByIfscResult)
+        public GetBranchDetailsByIfscResponseBody(BankDataServiceReference.BankDetails GetBranchDetailsByIfscResult)
         {
             this.GetBranchDetailsByIfscResult = GetBranchDetailsByIfscResult;
         }
@@ -568,13 +363,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBranchDetailsByBank", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBranchDetailsByBankRequestBody Body;
+        public BankDataServiceReference.GetBranchDetailsByBankRequestBody Body;
         
         public GetBranchDetailsByBankRequest()
         {
         }
         
-        public GetBranchDetailsByBankRequest(WorldlineLiveServiceReference.GetBranchDetailsByBankRequestBody Body)
+        public GetBranchDetailsByBankRequest(BankDataServiceReference.GetBranchDetailsByBankRequestBody Body)
         {
             this.Body = Body;
         }
@@ -616,13 +411,13 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBranchDetailsByBankResponse", Namespace="http://arctechinfo.com/webservies/worldline-training", Order=0)]
-        public WorldlineLiveServiceReference.GetBranchDetailsByBankResponseBody Body;
+        public BankDataServiceReference.GetBranchDetailsByBankResponseBody Body;
         
         public GetBranchDetailsByBankResponse()
         {
         }
         
-        public GetBranchDetailsByBankResponse(WorldlineLiveServiceReference.GetBranchDetailsByBankResponseBody Body)
+        public GetBranchDetailsByBankResponse(BankDataServiceReference.GetBranchDetailsByBankResponseBody Body)
         {
             this.Body = Body;
         }
@@ -636,26 +431,26 @@ namespace WorldlineLiveServiceReference
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WorldlineLiveServiceReference.BankDetails[] GetBranchDetailsByBankResult;
+        public BankDataServiceReference.BankDetails[] GetBranchDetailsByBankResult;
         
         public GetBranchDetailsByBankResponseBody()
         {
         }
         
-        public GetBranchDetailsByBankResponseBody(WorldlineLiveServiceReference.BankDetails[] GetBranchDetailsByBankResult)
+        public GetBranchDetailsByBankResponseBody(BankDataServiceReference.BankDetails[] GetBranchDetailsByBankResult)
         {
             this.GetBranchDetailsByBankResult = GetBranchDetailsByBankResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public interface SoapDemoSoapChannel : WorldlineLiveServiceReference.SoapDemoSoap, System.ServiceModel.IClientChannel
+    public interface BankDataSoapChannel : BankDataServiceReference.BankDataSoap, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public partial class SoapDemoSoapClient : System.ServiceModel.ClientBase<WorldlineLiveServiceReference.SoapDemoSoap>, WorldlineLiveServiceReference.SoapDemoSoap
+    public partial class BankDataSoapClient : System.ServiceModel.ClientBase<BankDataServiceReference.BankDataSoap>, BankDataServiceReference.BankDataSoap
     {
         
         /// <summary>
@@ -665,99 +460,75 @@ namespace WorldlineLiveServiceReference
         /// <param name="clientCredentials">The client credentials</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public SoapDemoSoapClient(EndpointConfiguration endpointConfiguration) : 
-                base(SoapDemoSoapClient.GetBindingForEndpoint(endpointConfiguration), SoapDemoSoapClient.GetEndpointAddress(endpointConfiguration))
+        public BankDataSoapClient(EndpointConfiguration endpointConfiguration) : 
+                base(BankDataSoapClient.GetBindingForEndpoint(endpointConfiguration), BankDataSoapClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public SoapDemoSoapClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(SoapDemoSoapClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public BankDataSoapClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(BankDataSoapClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public SoapDemoSoapClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(SoapDemoSoapClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public BankDataSoapClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(BankDataSoapClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public SoapDemoSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public BankDataSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.HelloWorldResponse> WorldlineLiveServiceReference.SoapDemoSoap.HelloWorldAsync(WorldlineLiveServiceReference.HelloWorldRequest request)
-        {
-            return base.Channel.HelloWorldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WorldlineLiveServiceReference.HelloWorldResponse> HelloWorldAsync()
-        {
-            WorldlineLiveServiceReference.HelloWorldRequest inValue = new WorldlineLiveServiceReference.HelloWorldRequest();
-            inValue.Body = new WorldlineLiveServiceReference.HelloWorldRequestBody();
-            return ((WorldlineLiveServiceReference.SoapDemoSoap)(this)).HelloWorldAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetOrdersResponse> WorldlineLiveServiceReference.SoapDemoSoap.GetOrdersAsync(WorldlineLiveServiceReference.GetOrdersRequest request)
-        {
-            return base.Channel.GetOrdersAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetOrdersResponse> GetOrdersAsync()
-        {
-            WorldlineLiveServiceReference.GetOrdersRequest inValue = new WorldlineLiveServiceReference.GetOrdersRequest();
-            inValue.Body = new WorldlineLiveServiceReference.GetOrdersRequestBody();
-            return ((WorldlineLiveServiceReference.SoapDemoSoap)(this)).GetOrdersAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBankListResponse> WorldlineLiveServiceReference.SoapDemoSoap.GetBankListAsync(WorldlineLiveServiceReference.GetBankListRequest request)
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBankListResponse> BankDataServiceReference.BankDataSoap.GetBankListAsync(BankDataServiceReference.GetBankListRequest request)
         {
             return base.Channel.GetBankListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBankListResponse> GetBankListAsync()
+        public System.Threading.Tasks.Task<BankDataServiceReference.GetBankListResponse> GetBankListAsync(int offset, int rowCount)
         {
-            WorldlineLiveServiceReference.GetBankListRequest inValue = new WorldlineLiveServiceReference.GetBankListRequest();
-            inValue.Body = new WorldlineLiveServiceReference.GetBankListRequestBody();
-            return ((WorldlineLiveServiceReference.SoapDemoSoap)(this)).GetBankListAsync(inValue);
+            BankDataServiceReference.GetBankListRequest inValue = new BankDataServiceReference.GetBankListRequest();
+            inValue.Body = new BankDataServiceReference.GetBankListRequestBody();
+            inValue.Body.offset = offset;
+            inValue.Body.rowCount = rowCount;
+            return ((BankDataServiceReference.BankDataSoap)(this)).GetBankListAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByIfscResponse> WorldlineLiveServiceReference.SoapDemoSoap.GetBranchDetailsByIfscAsync(WorldlineLiveServiceReference.GetBranchDetailsByIfscRequest request)
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByIfscResponse> BankDataServiceReference.BankDataSoap.GetBranchDetailsByIfscAsync(BankDataServiceReference.GetBranchDetailsByIfscRequest request)
         {
             return base.Channel.GetBranchDetailsByIfscAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByIfscResponse> GetBranchDetailsByIfscAsync(string IfscCode)
+        public System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByIfscResponse> GetBranchDetailsByIfscAsync(string ifscCode)
         {
-            WorldlineLiveServiceReference.GetBranchDetailsByIfscRequest inValue = new WorldlineLiveServiceReference.GetBranchDetailsByIfscRequest();
-            inValue.Body = new WorldlineLiveServiceReference.GetBranchDetailsByIfscRequestBody();
-            inValue.Body.IfscCode = IfscCode;
-            return ((WorldlineLiveServiceReference.SoapDemoSoap)(this)).GetBranchDetailsByIfscAsync(inValue);
+            BankDataServiceReference.GetBranchDetailsByIfscRequest inValue = new BankDataServiceReference.GetBranchDetailsByIfscRequest();
+            inValue.Body = new BankDataServiceReference.GetBranchDetailsByIfscRequestBody();
+            inValue.Body.ifscCode = ifscCode;
+            return ((BankDataServiceReference.BankDataSoap)(this)).GetBranchDetailsByIfscAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByBankResponse> WorldlineLiveServiceReference.SoapDemoSoap.GetBranchDetailsByBankAsync(WorldlineLiveServiceReference.GetBranchDetailsByBankRequest request)
+        System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByBankResponse> BankDataServiceReference.BankDataSoap.GetBranchDetailsByBankAsync(BankDataServiceReference.GetBranchDetailsByBankRequest request)
         {
             return base.Channel.GetBranchDetailsByBankAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WorldlineLiveServiceReference.GetBranchDetailsByBankResponse> GetBranchDetailsByBankAsync(string bankName, int offset, int rowCount)
+        public System.Threading.Tasks.Task<BankDataServiceReference.GetBranchDetailsByBankResponse> GetBranchDetailsByBankAsync(string bankName, int offset, int rowCount)
         {
-            WorldlineLiveServiceReference.GetBranchDetailsByBankRequest inValue = new WorldlineLiveServiceReference.GetBranchDetailsByBankRequest();
-            inValue.Body = new WorldlineLiveServiceReference.GetBranchDetailsByBankRequestBody();
+            BankDataServiceReference.GetBranchDetailsByBankRequest inValue = new BankDataServiceReference.GetBranchDetailsByBankRequest();
+            inValue.Body = new BankDataServiceReference.GetBranchDetailsByBankRequestBody();
             inValue.Body.bankName = bankName;
             inValue.Body.offset = offset;
             inValue.Body.rowCount = rowCount;
-            return ((WorldlineLiveServiceReference.SoapDemoSoap)(this)).GetBranchDetailsByBankAsync(inValue);
+            return ((BankDataServiceReference.BankDataSoap)(this)).GetBranchDetailsByBankAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -772,26 +543,27 @@ namespace WorldlineLiveServiceReference
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.SoapDemoSoap))
+            if ((endpointConfiguration == EndpointConfiguration.BankDataSoap))
             {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
                 result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
                 result.MaxReceivedMessageSize = int.MaxValue;
                 result.AllowCookies = true;
+                result.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
                 return result;
             }
-            if ((endpointConfiguration == EndpointConfiguration.SoapDemoSoap12))
+            if ((endpointConfiguration == EndpointConfiguration.BankDataSoap12))
             {
                 System.ServiceModel.Channels.CustomBinding result = new System.ServiceModel.Channels.CustomBinding();
                 System.ServiceModel.Channels.TextMessageEncodingBindingElement textBindingElement = new System.ServiceModel.Channels.TextMessageEncodingBindingElement();
                 textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, System.ServiceModel.Channels.AddressingVersion.None);
                 result.Elements.Add(textBindingElement);
-                System.ServiceModel.Channels.HttpTransportBindingElement httpBindingElement = new System.ServiceModel.Channels.HttpTransportBindingElement();
-                httpBindingElement.AllowCookies = true;
-                httpBindingElement.MaxBufferSize = int.MaxValue;
-                httpBindingElement.MaxReceivedMessageSize = int.MaxValue;
-                result.Elements.Add(httpBindingElement);
+                System.ServiceModel.Channels.HttpsTransportBindingElement httpsBindingElement = new System.ServiceModel.Channels.HttpsTransportBindingElement();
+                httpsBindingElement.AllowCookies = true;
+                httpsBindingElement.MaxBufferSize = int.MaxValue;
+                httpsBindingElement.MaxReceivedMessageSize = int.MaxValue;
+                result.Elements.Add(httpsBindingElement);
                 return result;
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
@@ -799,13 +571,13 @@ namespace WorldlineLiveServiceReference
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.SoapDemoSoap))
+            if ((endpointConfiguration == EndpointConfiguration.BankDataSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://bankdetailsdemo.azurewebsites.net/WebServices/SoapDemo.asmx");
+                return new System.ServiceModel.EndpointAddress("https://localhost:44352/WebServicesDev/BankData.asmx");
             }
-            if ((endpointConfiguration == EndpointConfiguration.SoapDemoSoap12))
+            if ((endpointConfiguration == EndpointConfiguration.BankDataSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://bankdetailsdemo.azurewebsites.net/WebServices/SoapDemo.asmx");
+                return new System.ServiceModel.EndpointAddress("https://localhost:44352/WebServicesDev/BankData.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
@@ -813,9 +585,9 @@ namespace WorldlineLiveServiceReference
         public enum EndpointConfiguration
         {
             
-            SoapDemoSoap,
+            BankDataSoap,
             
-            SoapDemoSoap12,
+            BankDataSoap12,
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Week11Day5WebServiceClient.Services;
+using Week11Day5WebServiceClient.Settings;
 
 namespace Week11Day5WebServiceClient
 {
@@ -27,6 +28,8 @@ namespace Week11Day5WebServiceClient
             services.AddControllersWithViews();
 
             services.AddScoped<IBankDetailService, BankDetailService>();
+
+            services.Configure<BankDetailsApiAuth>(Configuration.GetSection(nameof(BankDetailsApiAuth)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
